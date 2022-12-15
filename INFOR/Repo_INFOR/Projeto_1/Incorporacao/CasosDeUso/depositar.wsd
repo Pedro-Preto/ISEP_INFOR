@@ -1,0 +1,73 @@
+@startuml
+
+usecase UC1 as "UC1 - Formaliza um pedido de depósito"
+usecase UC2 as "UC2 - Considera todo o processo de depósito"
+usecase UC3 as "UC3 - Efetua um seguro sobre a(s) peça(s) depositada(s)"
+usecase UC4 as "UC4 - Paga ao depositário a retribuição devida"
+usecase UC5 as "UC5 - Reembolsa despesas"
+usecase UC6 as "UC6 - Indemniza prejuízos"
+usecase UC7 as "UC7 - Procura instituições para efetuar depósito"
+usecase UC8 as "UC8 - Confirma condições da instituição"
+usecase UC9 as "UC9 - Efetua relatório exautivo sobre a instituição"
+usecase UC10 as "UC10 - Escolhe a instituição"
+usecase UC11 as "UC11 - Assina-se um contrato de depósito"
+usecase UC12 as "UC12 - Acompanha transporte da(s) peça(s)"
+usecase UC13 as "UC13 - Confirma contrato e estado da(s) peça(s)"
+usecase UC14 as "UC14 - Formaliza pedido para depositar os seus objetos ao Museu do Isep"
+usecase UC15 as "UC15 - Responde ao pedido do depositante"
+usecase UC16 as "UC16 - Documenta o objeto(s) depositado(s)"
+usecase UC17 as "UC17 - Anexa a documentação relativa ao objeto(s) depositado(s)"
+usecase UC18 as "UC18 - Autoriza o depósito"
+usecase UC19 as "UC19 - Combina-se detalhes do trasnporte"
+usecase UC20 as "UC20 - Assina-se contrato"
+usecase UC21 as "UC21 - Desembala e analisa cuidadosamente a(s) peça(s)"
+usecase UC22 as "UC22 - Compara relatórios"
+usecase UC23 as "UC23 - Comunica diferenças e tira-se fotografias"
+usecase UC24 as "UC24 - Elimina diferenças"
+usecase UC25 as "UC25 - Revê periodicamente a(s) peça(s)"
+usecase UC26 as "UC26 - Arquiva a documentação relativa ao objeto(s) depositado(s)"
+
+actor "Museu" as MU
+actor "Depositante Externo" as DEPO
+actor "Responável técnico do museu" as TEC
+actor "Depositario Externo" as TARIO
+
+left to right direction
+TEC --> (UC1)
+TEC --> (UC2)
+TEC --> (UC7)
+TEC --> (UC8)
+TEC --> (UC9)
+TEC --> (UC10)
+TEC --> (UC12)
+TEC --> (UC15)
+TEC --> (UC18)
+TEC --> (UC19)
+TEC --> (UC20)
+
+MU --> (UC3)
+MU --> (UC4)
+MU --> (UC5)
+MU --> (UC6)
+MU --> (UC11)
+MU --> (UC13)
+MU --> (UC16)
+MU --> (UC17)
+MU --> (UC21)
+MU --> (UC22)
+MU --> (UC23)
+MU --> (UC24)
+MU --> (UC25)
+MU --> (UC26)
+
+TARIO --> (UC11)
+
+DEPO --> (UC14)
+DEPO --> (UC8)
+DEPO --> (UC19)
+DEPO --> (UC20)
+DEPO --> (UC4)
+DEPO --> (UC5)
+DEPO --> (UC6)
+
+@enduml

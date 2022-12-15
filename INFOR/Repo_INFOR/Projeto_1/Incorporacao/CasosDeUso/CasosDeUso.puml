@@ -1,0 +1,137 @@
+@startuml
+
+usecase UC1 as "UC1 - Adquire a peça"
+usecase UC2 as "UC2 - Confirma o estado de conservação da peça"
+usecase UC3 as "UC3 - Confirma a documentação da peça"
+usecase UC4 as "UC4 - Incorpora a peça numa esposição"
+usecase UC5 as "UC5 - Valida condições no uso e exposição das aquisições"
+usecase UC6 as "UC6 - Conserta a peça"
+usecase UC7 as "UC7 - Considera valor da peça"
+usecase UC8 as "UC8 - Documenta a incorporação da peça"
+usecase UC9 as "UC9 - Pondera a existência de recursos para incorporar a peça"
+usecase UC10 as "UC10 - Analisa as dimensões da peça e do espaço"
+usecase UC11 as "UC11 - Assegura transporte para a peça"
+usecase UC12 as "UC12 - Declarar em que situação estão a intervir"
+usecase UC13 as "UC13 - Delegar colaborador para representar o museu"
+usecase UC14 as "UC14 - Representa o museu"
+usecase UC15 as "UC15 - Comunica recolha da peça à presidência"
+usecase UC16 as "UC16 - Recolhe a peça"
+usecase UC17 as "UC17 - Confirma historial da peça"
+usecase UC18 as "UC18 - Vende peça"
+usecase UC19 as "UC19 - Celebra um contrato"
+usecase UC20 as "UC20 - Procede aos Pagamentos"
+usecase UC21 as "UC21 - Contacta Proprietário da peça"
+usecase UC22 as "UC22 - Pondera Compra da peça"
+usecase UC23 as "UC23 - Contacta Presidência"
+usecase UC24 as "UC24 - Assegura a existência de recursos financeiros para a compra da peça"
+usecase UC25 as "UC25 - Procura fundos"
+usecase UC26 as "UC26 - Comunica elegalidade às autoridades"
+usecase UC27 as "UC27 - Doou peça"
+usecase UC28 as "UC28 - Aprova doação"
+usecase UC29 as "UC29 - Prepara documentação para se aceitar a doação"
+usecase UC30 as "UC30 - Envia carta a aprovar doação"
+usecase UC31 as "UC31 - Estabelece contacto com doador"
+usecase UC32 as "UC32 - Envia carta a agradecer ao doador"
+usecase UC32 as "UC32 - Envia carta a descrever procedimentos doador"
+usecase UC34 as "UC34 - Aprova a aquisiçao de legado"
+usecase UC35 as "UC35 - Estabelece contacto com testador"
+usecase UC36 as "UC36 - Prepara o processo testamentário"
+usecase UC37 as "UC37 - Avalia o legado e envia uma carta a relatar a decisão"
+usecase UC38 as "UC38 - Herda a  peça"
+usecase UC39 as "UC39 - Assegura a existência de recursos financeiros para a preservar a peça"
+usecase UC40 as "UC40 - Envia carta a tomar conhecimento das condições"
+usecase UC41 as "UC41 - Envia carta de agradecimento ao testador"
+usecase UC42 as "UC42 - Envia carta com o contrato ao testador"
+usecase UC43 as "UC43 - Envia carta a rejeitar a peça"
+usecase UC44 as "UC44 - Aconselha a rejeitar ou aceita a peça"
+usecase UC45 as "UC45 - Assina toda a documentação para adquirir a peça"
+usecase UC46 as "UC46 - Pondera a aprovação da permuta"
+usecase UC47 as "UC47 - Efetua uma pesquisa de objetos disponíveis para permuta"
+usecase UC48 as "UC48 - Prepara documentação"
+usecase UC49 as "UC49 - Pondera a autorização da troca"
+usecase UC50 as "UC50 - Envia carta com cópa do contrato de permuta"
+
+usecase UC51 as "UC51 - Arquiva todos os registos"
+
+
+
+actor "Museu" as MU
+actor "Presidência" as PRE
+actor "Responável da coleção" as RC
+actor "Mecenas" as ME
+actor "Colaborador do museu" as CO
+actor "Responável pela recolha" as RR
+actor "Vendedor" as VE
+actor "Coordenador da Divisão de Documentação e Cultura" as CD
+actor "Doador" as DO
+actor "Testador" as TE
+actor "Responsável pela permuta" as RP
+
+left to right direction
+MU --> (UC1)
+MU --> (UC2)
+MU --> (UC3)
+MU --> (UC4)
+MU --> (UC7)
+MU --> (UC8)
+MU --> (UC9)
+MU --> (UC10)
+MU --> (UC13)
+MU --> (UC17)
+MU --> (UC19)
+MU --> (UC20)
+MU --> (UC25)
+MU -- (UC26)
+MU --> (UC30)
+MU --> (UC38)
+MU --> (UC40)
+MU --> (UC41)
+MU --> (UC42)
+MU --> (UC43)
+MU --> (UC47)
+MU --> (UC50)
+MU --> (UC51)
+
+PRE --> (UC5)  
+PRE --> (UC11)
+PRE --> (UC22)
+PRE --> (UC24)
+PRE --> (UC28)
+PRE --> (UC34)
+PRE --> (UC36)
+PRE --> (UC37)
+PRE --> (UC39)
+PRE --> (UC44)
+PRE --> (UC45)
+PRE --> (UC46)
+PRE --> (UC49)
+
+RC --> (UC5)
+
+ME --> (UC6)
+
+CO --> (UC12)
+CO --> (UC14)
+
+RR --> (UC15)
+RR --> (UC16)
+
+VE --> (UC18)
+VE --> (UC19)
+
+CD --> (UC21)
+CD --> (UC23)
+CD --> (UC24)
+CD --> (UC29)
+CD --> (UC31)
+CD --> (UC32)
+CD --> (UC35)
+CD --> (UC39)
+CD --> (UC46)
+
+DO --> (UC27)
+DO --> (UC19)
+
+TE --> (UC19)
+
+@enduml
